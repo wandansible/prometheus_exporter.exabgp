@@ -1,0 +1,181 @@
+---
+argument_specs:
+  main:
+    short_description: Install and configure Exabgp Exporter for Prometheus
+    options:
+      exabgp_exporter_listen:
+        description: Listen address and port
+        type: str
+        default: localhost:9576
+
+      exabgp_exporter_log_level:
+        description: Only log messages with the given severity or above
+        type: str
+        default: info
+        choices:
+          - debug
+          - info
+          - warn
+          - error
+
+      exabgp_exporter_log_format:
+        description: Only log messages with the given severity or above
+        type: str
+        default: logfmt
+        choices:
+          - logfmt
+          - json
+
+      exabgp_exporter_telemetry_path:
+        description: Path under which to expose metrics
+        type: str
+        default: /metrics
+
+      exabgp_exporter_mode:
+        description: Mode exabgp exporter is running in, embedded inside exabgp or standalone
+        type: str
+        default: embedded
+        choices:
+          - embedded
+          - standalone
+
+      exabgp_exporter_port:
+        description: Listen port
+        type: int
+        default: 9576
+
+      exabgp_exporter_file_sd_dir:
+        description: Directory, on scrape servers, for the file service discovery target
+        type: str
+        default: /etc/prometheus/file_sd/exabgp_exporter
+
+      exabgp_exporter_scrape_servers:
+        description: |
+          List of servers that scrape exporter metrics from the host,
+          overrides prometheus_scrape_servers
+        type: list
+        elements: str
+
+      exabgp_exporter_labels:
+        description: |
+          Labels added to exporter metrics,
+          overrides prometheus_labels
+        type: dict
+
+      exabgp_exporter_install:
+        description: If true, install exporter
+        type: bool
+        default: true
+
+      exabgp_exporter_configure_caddy:
+        description: If true, configure caddy to add a TLS endpoint for the exporter
+        type: bool
+        default: false
+
+      exabgp_exporter_register:
+        description: If true, register the exporter with the scrape servers
+        type: bool
+        default: false
+
+      exabgp_exporter_user:
+        description: Name of the exporter unix user
+        type: str
+
+      exabgp_exporter_group:
+        description: Name of the exporter unix group
+        type: str
+
+      exabgp_exporter_groups:
+        description: Unix groups added to exporter unix user
+        type: list
+        elements: str
+
+      exabgp_exporter_manage_user:
+        description: If true, add exporter unix user and group
+        type: bool
+        default: true
+
+      exabgp_exporter_bin_dir:
+        description: Directory for the exporter executable
+        type: str
+
+      exabgp_exporter_src_dir:
+        description: Directory for the downloaded exporter src archive
+        type: str
+
+      exabgp_exporter_strip_components:
+        description: Strip NUMBER leading components from file names on extraction
+        type: int
+        default: 0
+
+      exabgp_exporter_clean_src_dir:
+        description: Remove old downloaded archive files from exporter src directory
+        type: bool
+        default: true
+
+      exabgp_exporter_github_org:
+        description: Name of organisation for exporter github repository
+        type: str
+        default: gizmoguy
+
+      exabgp_exporter_github_repo:
+        description: Name of exporter github repository
+        type: str
+
+      exabgp_exporter_github_checksum_filename:
+        description: Filename for the exporter package checksums file on github
+        type: str
+        default: checksums.txt
+
+      exabgp_exporter_archive_urls:
+        description: |
+          Override the list of exporter archive urls for different platforms and architectures
+        type: list
+        elements: str
+
+      exabgp_exporter_version:
+        description: Version to install (use "latest" for the latest version)
+        type: str
+        default: latest
+
+      exabgp_exporter_arch_map:
+        description: |
+          Mapping of the possible values of ansible_architecture
+          to the exporter package architectures
+        type: dict
+
+      exabgp_exporter_binary:
+        description: Filename for the exporter executable
+        type: str
+
+      exabgp_exporter_checksum_url:
+        description: Override the URL for the exporter checksum file
+        type: str
+
+      exabgp_exporter_checksum_type:
+        description: The exporter package checksum type
+        type: str
+
+      exabgp_exporter_checksums:
+        description: Override exporter archive checksums file contents
+        type: str
+
+      exabgp_exporter_service:
+        description: Name of the exporter systemd service
+        type: str
+
+      exabgp_exporter_handler:
+        description: Name of the exporter handler to notify
+        type: str
+
+      exabgp_exporter_description:
+        description: Description for the exporter systemd service
+        type: str
+
+      exabgp_exporter_flags:
+        description: Contents or list of flags to run exporter with
+        type: raw
+
+      exabgp_exporter_target:
+        description: Scrape target hostname and port
+        type: str
