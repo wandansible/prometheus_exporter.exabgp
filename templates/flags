@@ -1,0 +1,5 @@
+#jinja2: trim_blocks: "false", lstrip_blocks: "true"
+--web.telemetry-path="{{ exabgp_exporter_telemetry_path }}" \
+--log.level="{{ exabgp_exporter_log_level }}" \
+--log.format="{{ exabgp_exporter_log_format }}" \
+--web.listen-address="{{ exabgp_exporter_listen }}"

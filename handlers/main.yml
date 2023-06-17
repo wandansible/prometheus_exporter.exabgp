@@ -1,0 +1,7 @@
+---
+- name: restart standalone exabgp_exporter
+  ansible.builtin.service:
+    name: exabgp_exporter
+    state: restarted
+  listen: restart exabgp_exporter
+  when: exabgp_exporter_mode == "standalone"

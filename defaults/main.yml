@@ -1,0 +1,13 @@
+---
+exabgp_exporter_github_org: gizmoguy
+exabgp_exporter_github_checksum_filename: checksums.txt
+exabgp_exporter_strip_components: 0
+exabgp_exporter_port: 9576
+exabgp_exporter_flags: "{{ lookup('template', 'flags') }}"
+exabgp_exporter_listen: localhost:{{ exabgp_exporter_port }}
+exabgp_exporter_log_level: info
+exabgp_exporter_log_format: logfmt
+exabgp_exporter_telemetry_path: /metrics
+exabgp_exporter_mode: "embedded"
+exabgp_exporter_service: >-
+  {{ "exabgp_exporter" if exabgp_exporter_mode == "standalone" else "" }}
