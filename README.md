@@ -104,7 +104,7 @@ Options (= indicates it is required):
           default: localhost:9576
           type: str
 
-- exabgp_exporter_log_format  Only log messages with the given severity or above
+- exabgp_exporter_log_format  Output format of log messages
           choices: [logfmt, json]
           default: logfmt
           type: str

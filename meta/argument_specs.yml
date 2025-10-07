@@ -19,7 +19,7 @@ argument_specs:
           - error
 
       exabgp_exporter_log_format:
-        description: Only log messages with the given severity or above
+        description: Output format of log messages
         type: str
         default: logfmt
         choices:
