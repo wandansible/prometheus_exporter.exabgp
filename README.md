@@ -16,13 +16,15 @@ ENTRY POINT: *main* - Install and configure Exabgp Exporter for Prometheus
 
 Options (= indicates it is required):
 
-- exabgp_exporter_arch_map  Mapping of the possible values of ansible_architecture to the
-                             exporter package architectures
+- exabgp_exporter_arch_map  Mapping of the possible values of
+                             ansible_architecture to the exporter
+                             package architectures
           default: null
           type: dict
 
-- exabgp_exporter_archive_urls  Override the list of exporter archive urls for different platforms
-                                 and architectures
+- exabgp_exporter_archive_urls  Override the list of exporter archive
+                                 urls for different platforms and
+                                 architectures
           default: null
           elements: str
           type: list
@@ -39,39 +41,49 @@ Options (= indicates it is required):
           default: null
           type: str
 
-- exabgp_exporter_checksum_url  Override the URL for the exporter checksum file
+- exabgp_exporter_checksum_url  Override the URL for the exporter
+                                 checksum file
           default: null
           type: str
 
-- exabgp_exporter_checksums  Override exporter archive checksums file contents
+- exabgp_exporter_checksums  Override exporter archive checksums file
+                              contents
           default: null
           type: str
 
-- exabgp_exporter_clean_src_dir  Remove old downloaded archive files from exporter src directory
+- exabgp_exporter_clean_src_dir  Remove old downloaded archive files
+                                  from exporter src directory
           default: true
           type: bool
 
-- exabgp_exporter_configure_caddy  If true, configure caddy to add a TLS endpoint for the exporter
+- exabgp_exporter_configure_caddy  If true, configure caddy to add a
+                                    TLS endpoint for the exporter
           default: false
           type: bool
 
-- exabgp_exporter_description  Description for the exporter systemd service
+- exabgp_exporter_description  Description for the exporter systemd
+                                service
           default: null
           type: str
 
-- exabgp_exporter_file_sd_dir  Directory, on scrape servers, for the file service discovery target
+- exabgp_exporter_file_sd_dir  Directory, on scrape servers, for the
+                                file service discovery target
           default: /etc/prometheus/file_sd/exabgp_exporter
           type: str
 
-- exabgp_exporter_flags  List of flags to run exporter with, as string or list
+- exabgp_exporter_flags  List of flags to run exporter with, as
+                          string or list
           default: null
           type: raw
 
-- exabgp_exporter_github_checksum_filename  Filename for the exporter package checksums file on github
+- exabgp_exporter_github_checksum_filename  Filename for the exporter
+                                             package checksums file on
+                                             github
           default: checksums.txt
           type: str
 
-- exabgp_exporter_github_org  Name of organisation for exporter github repository
+- exabgp_exporter_github_org  Name of organisation for exporter
+                               github repository
           default: gizmoguy
           type: str
 
@@ -96,7 +108,8 @@ Options (= indicates it is required):
           default: true
           type: bool
 
-- exabgp_exporter_labels  Labels added to exporter metrics, overrides prometheus_labels
+- exabgp_exporter_labels  Labels added to exporter metrics, overrides
+                           prometheus_labels
           default: null
           type: dict
 
@@ -109,17 +122,19 @@ Options (= indicates it is required):
           default: logfmt
           type: str
 
-- exabgp_exporter_log_level  Only log messages with the given severity or above
+- exabgp_exporter_log_level  Only log messages with the given
+                              severity or above
           choices: [debug, info, warn, error]
           default: info
           type: str
 
-- exabgp_exporter_manage_user  If true, add exporter unix user and group
+- exabgp_exporter_manage_user  If true, add exporter unix user and
+                                group
           default: true
           type: bool
 
-- exabgp_exporter_mode  Mode exabgp exporter is running in, embedded inside exabgp or
-                         standalone
+- exabgp_exporter_mode  Mode exabgp exporter is running in, embedded
+                         inside exabgp or standalone
           choices: [embedded, standalone]
           default: embedded
           type: str
@@ -128,11 +143,13 @@ Options (= indicates it is required):
           default: 9576
           type: int
 
-- exabgp_exporter_register  If true, register the exporter with the scrape servers
+- exabgp_exporter_register  If true, register the exporter with the
+                             scrape servers
           default: false
           type: bool
 
-- exabgp_exporter_scrape_servers  List of servers that scrape exporter metrics from the host,
+- exabgp_exporter_scrape_servers  List of servers that scrape
+                                   exporter metrics from the host,
                                    overrides prometheus_scrape_servers
           default: null
           elements: str
@@ -142,15 +159,18 @@ Options (= indicates it is required):
           default: null
           type: str
 
-- exabgp_exporter_service_unit_file  Contents of the systemd unit file for the exporter
+- exabgp_exporter_service_unit_file  Contents of the systemd unit
+                                      file for the exporter
           default: null
           type: str
 
-- exabgp_exporter_src_dir  Directory for the downloaded exporter src archive
+- exabgp_exporter_src_dir  Directory for the downloaded exporter src
+                            archive
           default: null
           type: str
 
-- exabgp_exporter_strip_components  Strip NUMBER leading components from file names on extraction
+- exabgp_exporter_strip_components  Strip NUMBER leading components
+                                     from file names on extraction
           default: 0
           type: int
 
@@ -166,7 +186,8 @@ Options (= indicates it is required):
           default: null
           type: str
 
-- exabgp_exporter_version  Version to install (use "latest" for the latest version)
+- exabgp_exporter_version  Version to install (use "latest" for the
+                            latest version)
           default: latest
           type: str
 ```
