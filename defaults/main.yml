@@ -1,6 +1,6 @@
 ---
 exabgp_exporter_github_org: gizmoguy
-exabgp_exporter_github_checksum_filename: checksums.txt
+exabgp_exporter_checksum_filename: checksums.txt
 exabgp_exporter_strip_components: 0
 exabgp_exporter_port: 9576
 exabgp_exporter_flags: "{{ lookup('template', 'flags') }}"

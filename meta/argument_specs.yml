@@ -127,7 +127,7 @@ argument_specs:
         type: str
         default: ""
 
-      exabgp_exporter_github_checksum_filename:
+      exabgp_exporter_checksum_filename:
         description: Filename for the exporter package checksums file on github
         type: str
         default: checksums.txt
